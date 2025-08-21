@@ -1,0 +1,2 @@
+LeetCode - https://leetcode.com/problems/contains-duplicate/description/
+NeetCode - https://neetcode.io/problems/duplicate-integer?list=neetcode150
