@@ -1,0 +1,2 @@
+LeetCode - https://leetcode.com/problems/minimum-size-subarray-sum/description/
+NeetCode - https://neetcode.io/problems/minimum-size-subarray-sum?list=neetcode250
