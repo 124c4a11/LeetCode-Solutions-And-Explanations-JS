@@ -1,0 +1,2 @@
+LeetCode - https://leetcode.com/problems/remove-element/description/ 
+NeetCode - https://neetcode.io/problems/remove-element?list=neetcode250
