@@ -8,6 +8,7 @@
  * }
  */
 
+
 /**
  * @param {ListNode} head
  * @return {ListNode}
@@ -54,9 +55,9 @@ function reverseList(head) {
   //   оставшейся (ещё не обработанной)
   //   части списка.
   //
-  // Пример:
-  //   null ← 1       2 → 3 → null  
-  //          ^prev   ^curr
+  // Пример для:
+  //   null    1 → 2 → 3 → null  
+  //   ^prev   ^curr
   // 
   //   Шаг 1: null ← 1   2 → 3   →   null
   //   Шаг 2: null ← 1 ← 2   3   →   null
@@ -67,7 +68,6 @@ function reverseList(head) {
   // что является началом перевернутого
   // списка
   while (curr) {
-
     // Сохраняем ссылку на следующий
     // узел в tmp, чтобы в будущем
     // переместить на него curr
@@ -76,8 +76,8 @@ function reverseList(head) {
     // Если curr → узел со значением 1,
     // то tmp → узел со значением 2
     //
-    // null  →  1   →   2 → 3 → null
-    // ^prev    ^curr   ^tmp
+    // null    1 → 2 → 3 → null  
+    // ^prev   ^curr  ^tmp
     const tmp = curr.next;
 
     // Разрываем связь с основным списком
@@ -87,8 +87,8 @@ function reverseList(head) {
     // Пример для curr=1 и prev=null
     // в списке 1 → 2 → 3 → null:
     //
-    // null  ←  1      2 → 3 → null  
-    // ^prev    ^curr  ^tmp
+    // null ← 1      2 → 3 → null  
+    // ^prev  ^curr  ^tmp
     curr.next = prev;
 
     // Сдвигаем границу перевёрнутой
@@ -100,7 +100,8 @@ function reverseList(head) {
     // prev указывает на 1:
     //
     // null ← 1      2 → 3 → null  
-    //        ^prev  ^tmp
+    //        ^curr  ^tmp
+    //        ^prev
     prev = curr;
 
     // Продвигаемся по оригинальному
@@ -111,8 +112,17 @@ function reverseList(head) {
     // указывае curr.
     //
     // null ← 1      2 → 3 → null  
-    //        ^prev  ^curr
+    //        ^prev  ^tmp
+    //               ^curr
     curr = tmp;
+
+    //   null    1 → 2 → 3 → null  
+    //   ^prev   ^curr
+    // 
+    //   Шаг 1: null ← 1   2 → 3   →   null
+    //   Шаг 2: null ← 1 ← 2   3   →   null
+    //   Шаг 3: null ← 1 ← 2 ← 3       null
+    //                         ^prev   ^curr
   }
 
   // Когда curr становится null,
