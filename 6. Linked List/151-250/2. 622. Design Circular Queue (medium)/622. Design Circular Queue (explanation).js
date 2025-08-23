@@ -57,7 +57,7 @@ class MyCircularQueue {
         // Фиктивный правый узел — «хвост» очереди,
         // сразу связываем его с left как prev
         // (упрощает работу с границами)
-        this.right = new ListNode(0, null, this.left);
+        this.right = new ListNode(_, _, this.left);
 
         // Замыкаем пустую очередь: 
         // left.next → right

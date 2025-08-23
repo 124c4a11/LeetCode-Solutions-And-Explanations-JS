@@ -5,7 +5,7 @@ class ListNode {
      * @param {ListNode} next
      * @param {ListNode} prev
      */
-    constructor(val, next = null, prev = null) {
+    constructor(val = 0, next = null, prev = null) {
         this.val = val;
         this.next = next;
         this.prev = prev;
@@ -18,9 +18,9 @@ class MyCircularQueue {
      */
     constructor(k) {
         this.space = k;
-        this.left = new ListNode(0);
-        this.right = new ListNode(0, null, this.left);
-        this.left.next = this.right;
+        this.head = new ListNode();
+        this.tail = new ListNode(_, _, this.head);
+        this.head.next = this.tail;
     }
 
     /**
@@ -32,12 +32,12 @@ class MyCircularQueue {
 
         const curr = new ListNode(
             value,
-            this.right,
-            this.right.prev
+            this.tail,
+            this.tail.prev
         );
 
-        this.right.prev.next = curr;
-        this.right.prev = curr;
+        this.tail.prev.next = curr;
+        this.tail.prev = curr;
         this.space--;
 
         return true;
@@ -49,8 +49,8 @@ class MyCircularQueue {
     deQueue() {
         if (this.isEmpty()) return false;
 
-        this.left.next = this.left.next.next;
-        this.left.next.prev = this.left;
+        this.head.next = this.head.next.next;
+        this.head.next.prev = this.head;
         this.space++;
 
         return true;
@@ -60,21 +60,21 @@ class MyCircularQueue {
      * @return {number}
      */
     Front() {
-        return this.isEmpty() ? -1 : this.left.next.val;
+        return this.isEmpty() ? -1 : this.head.next.val;
     }
 
     /**
      * @return {number}
      */
     Rear() {
-        return this.isEmpty() ? -1 : this.right.prev.val;
+        return this.isEmpty() ? -1 : this.tail.prev.val;
     }
 
     /**
      * @return {boolean}
      */
     isEmpty() {
-        return this.left.next === this.right;
+        return this.head.next === this.tail;
     }
 
     /**
