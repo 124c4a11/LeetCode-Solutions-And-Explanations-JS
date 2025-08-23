@@ -8,6 +8,7 @@
  * }
  */
 
+
 /**
  * @param {ListNode} head
  * @return {void}
@@ -55,6 +56,18 @@ function reorderList(head) {
   // Для списка 1→2→3→4→5 
   // slow остановится на 3,
   // fast — на null
+  //
+  // Пример для:
+  // 1    → 2 → 3 → 4 → 5 → null
+  // ^slow  ^fast
+  // 
+  // Шаг 1:
+  // 1 → 2 → 3 → 4 → 5 → null
+  //     ^slow   ^fast 
+  // Шаг 2:
+  // 1 → 2 → 3 → 4 → 5 → null
+  //         ^slow       ^fast
+  // fast = null - выходим из цикла
   while (fast?.next) {
 
     // Шаг slow: 1→2→3
@@ -74,6 +87,9 @@ function reorderList(head) {
   // второй половины (узел после slow)  
   // slow=3 → second=4
   // (начало второй половины [4→5])
+  //
+  // 1 → 2 → 3    → 4 → 5
+  //         ^slow  ^second     
   let second = slow.next;
 
   // Отрываем первую половину от второй,
@@ -89,6 +105,9 @@ function reorderList(head) {
   //
   // prev будет служить началом
   // перевёрнутого списка.
+  //
+  // 1 → 2 → 3      null   4 → 5
+  //         ^slow  ^prev  ^second   
   let prev = (slow.next = null);
 
   // Переворачиваем вторую половину
@@ -96,6 +115,8 @@ function reorderList(head) {
   //
   // Изначально: second = [4→5];
   // после: prev = [5→4→null]
+  //
+  // 1 → 2 → 3      null ← 4 ← 5
   //
   // Зачем переворачивать вторую
   // половину списка
@@ -128,7 +149,14 @@ function reorderList(head) {
   // памяти.
   while (second) {
 
-    // Сохраняем следующий узел 
+    // Сохраняем ссылку на следующий узел
+    // оригинального списка,
+    // чтобы не потерять его хвост и 
+    // в дальнейшем переместить на него 
+    // указатель curr
+    //
+    // 1 → 2 → 3      null   4     → 5 → null
+    //         ^slow  ^prev  ^second ^tmp
     //
     // 1-й проход: tmp = 5
     // 2-й проход: tmp = null
@@ -137,11 +165,18 @@ function reorderList(head) {
     // Разворачиваем ссылку:
     // текущий узел указывает на prev  
     //
+    // 1 → 2 → 3      null ← 4       5 → null
+    //         ^slow  ^prev  ^second ^tmp
+    //
     // 1-й проход: 4.next = null  
     // 2-й проход: 5.next = 4
     second.next = prev;
 
-    // Перемещаем prev на текущий узел  
+    // Перемещаем prev на текущий узел
+    //
+    // 1 → 2 → 3      null ← 4       5 → null
+    //         ^slow         ^second ^tmp
+    //                       ^prev
     //
     // 1-й проход: prev = 4
     // 2-й проход: prev = 5
@@ -149,36 +184,72 @@ function reorderList(head) {
 
     // Переходим к следующему узлу
     // второй половины
+    //
+    // 1 → 2 → 3      null ← 4       5 → null
+    //         ^slow         ^prev   ^second                      
     second = tmp;
+
+    // Пример для:
+    // 1 → 2 → 3      null   4 → 5 → null
+    //         ^slow  ^prev  ^second
+    //
+    // Шаг 1: 
+    // 1 → 2 → 3   null ← 4   5    → null
+    //
+    // Шаг 2: 
+    // 1 → 2 → 3   null ← 4 ← 5      null
+    //                        ^prev  ^second
+    //
+    // Итог:
+    // 1 → 2 → 3   5 → 4 → null      null
+    //             ^prev             ^second
   }
 
   // Готовимся к объединению двух половин.
   // first указывает на начало
   // первой половины: [1→2→3→null].
+  //
+  // 1 → 2 → 3   5 → 4 → null      null
+  // ^first      ^prev             ^second
   let first = head;
 
   // second перенаправляем на prev,
   // то есть на голову перевёрнутой
   // половины: [5→4→null].
+  //
+  // 1 → 2 → 3   5 → 4 → null
+  // ^first      ^prev
+  //             ^second             
   second = prev;
 
   // Объединяем списки,
   // чередуя узлы первой и
-  // перевёрнутой второй половин  
+  // перевёрнутой второй половин:
+  //  - Берём 1 (из первой)
+  //  - Берём 5 (из перевёрнутой второй)
+  //  - Берём 2 (из первой)
+  //  - Берём 4 (из перевёрнутой второй)
+  //  - Оставшийся 3
   //
   // Для [1→2→3] и [5→4] получим 1→5→2→4→3
   while (second) {
 
     // Сохраняем следующий узел 
     // первой половины 
-    // 
+    //
+    // 1     → 2 → 3   5 → 4 → null
+    // ^first  ^tmp1   ^second 
+    //                  
     // 1-й проход: tmp1 = 2
     // 2-й: tmp1 = 3
     const tmp1 = first.next;
 
     // Сохраняем следующий узел
     // второй половины
-    // 
+    //
+    // 1     → 2 → 3   5     → 4 → null
+    // ^first  ^tmp1   ^second ^tmp2
+    //     
     // 1-й проход: tmp2 = 4
     // 2-й: tmp2 = null
     const tmp2 = second.next;
@@ -187,12 +258,19 @@ function reorderList(head) {
     // второй половины (second)
     // после узла first  
     //
+    // 1     → 5         2 → 3   4 → null
+    // ^first  ^second   ^tmp1   ^tmp2
+    //
     // 1-й проход: 1.next = 5 (1→5)
     // 2-й: 2.next = 4 (2→4)
     first.next = second;
 
     // Соединяем вставленный узел
     // с оставшейся частью первой половины
+    //
+    //
+    // 1     → 5      → 2 → 3   4 → null
+    // ^first  ^second  ^tmp1   ^tmp2
     //
     // 1-й проход: 5.next = 2 (5→2)
     // 2-й: 4.next = 3 (4→3)
@@ -201,6 +279,10 @@ function reorderList(head) {
     // Двигаем first к следующему узлу
     // первой половины
     //
+    // 1 → 5      → 2 → 3   4 → null
+    //     ^second  ^tmp1   ^tmp2
+    //              ^first
+    //
     // 1-й проход: first=2
     // 2-й: first=3  
     first = tmp1;
@@ -208,10 +290,25 @@ function reorderList(head) {
     // Двигаем second к следующему
     // узлу второй половины
     //
+    // 1 → 5 → 2 → 3   4 → null
+    //        ^tmp1   ^tmp2
+    //        ^first  ^second 
+    //
     // 1-й проход: second=4
     // 2-й: second=null  
     second = tmp2;
+
+    // Пример для:
+    // 1 → 2 → 3   5 → 4 → null
+    // ^first      ^second
+    //  
+    // Шаг 1: 
+    // 1 → 5 → 2 → 3   4 → null
+    //         ^first  ^second
+    //
+    // Шаг 2:
+    // 1 → 5 → 2 → 4 → 3       null
+    //                 ^first  ^second 
   }
-  
   // В результате список становится 1→5→2→4→3.
 }
