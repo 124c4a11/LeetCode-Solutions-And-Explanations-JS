@@ -1,0 +1,2 @@
+LeetCode - https://leetcode.com/problems/lfu-cache/description/
+NeetCode - https://neetcode.io/problems/lfu-cache?list=neetcode250
