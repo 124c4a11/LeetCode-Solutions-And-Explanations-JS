@@ -1,0 +1,2 @@
+LeetCode - https://leetcode.com/problems/insert-into-a-binary-search-tree/description/
+NeetCode - https://neetcode.io/problems/insert-into-a-binary-search-tree?list=neetcode250
