@@ -20,14 +20,13 @@ function postorderTraversal(root) {
   while (curr || stack.length) {
     if (curr) {
       result.push(curr.val);
-      stack.push(curr);
+      stack.push(curr.left);
       curr = curr.right;
 
       continue;
     }
 
     curr = stack.pop();
-    curr = curr.left;
   }
 
   return result.reverse();
