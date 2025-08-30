@@ -1,0 +1,2 @@
+LeetCode - https://leetcode.com/problems/construct-quad-tree/description/ 
+NeetCode - https://neetcode.io/problems/construct-quad-tree?list=neetcode250
