@@ -1,0 +1,2 @@
+LeetCode - https://leetcode.com/problems/sum-of-all-subset-xor-totals/description/
+NeetCode - https://neetcode.io/problems/sum-of-all-subset-xor-totals?list=neetcode250
