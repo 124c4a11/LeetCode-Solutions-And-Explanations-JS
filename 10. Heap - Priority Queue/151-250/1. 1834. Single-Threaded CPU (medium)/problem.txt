@@ -1,0 +1,2 @@
+LeetCode - https://leetcode.com/problems/single-threaded-cpu/description/
+NeetCode - https://neetcode.io/problems/single-threaded-cpu?list=neetcode250
