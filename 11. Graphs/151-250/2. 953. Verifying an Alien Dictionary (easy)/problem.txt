@@ -1,0 +1,2 @@
+LeetCode - https://leetcode.com/problems/verifying-an-alien-dictionary/description/
+NeetCode - https://neetcode.io/problems/verifying-an-alien-dictionary?list=neetcode250
