@@ -1,0 +1,2 @@
+LeetCode - https://leetcode.com/problems/open-the-lock/description/
+NeetCode - https://neetcode.io/problems/open-the-lock?list=neetcode250
