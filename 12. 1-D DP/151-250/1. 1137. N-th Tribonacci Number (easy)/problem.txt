@@ -1,0 +1,2 @@
+LeetCode - https://leetcode.com/problems/n-th-tribonacci-number/description/ 
+NeetCode - https://neetcode.io/problems/n-th-tribonacci-number?list=neetcode250
