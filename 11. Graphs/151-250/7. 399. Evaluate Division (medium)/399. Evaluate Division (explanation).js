@@ -14,7 +14,7 @@
  *     уравнения вида a / b.  
  * - values — числовые результаты этих уравнений.  
  * - queries — список запросов, где нужно найти
- *     значение отношения src / target.  
+ *     значение отношения src / dst.  
  * 
  * На выходе функция возвращает массив чисел,
  * где каждый элемент — это ответ на
@@ -114,12 +114,12 @@ function calcEquation(equations, values, queries) {
   }
 
   // Рекурсивная функция DFS для поиска пути
-  // src → target и поиска коэффициента
-  // деления src/target
+  // src → dst и поиска коэффициента
+  // деления src/dst
   //
   // visited — множество уже посещенных узлов,
   // чтобы избежать циклов
-  function dfs(src, target, visited) {
+  function dfs(src, dst, visited) {
 
     // Если один из узлов отсутствует,
     // результат неопределен (-1)
@@ -128,15 +128,15 @@ function calcEquation(equations, values, queries) {
     // adj.has("e") === false → return -1
     if (
       !adj.has(src)
-      || !adj.has(target)
+      || !adj.has(dst)
     ) return -1;
 
-    // Если src и target совпадают,
+    // Если src и dst совпадают,
     // возвращаем 1 (деление само на себя)
     //
     // Пример:
     // запрос ["a","a"] вернет 1
-    if (src === target) return 1;
+    if (src === dst) return 1;
 
     // Помечаем текущий узел src как
     // посещенный, чтобы не зациклиться
@@ -151,8 +151,8 @@ function calcEquation(equations, values, queries) {
 
       // Рекурсивно пытаемся найти путь
       // и коэффициент отношения
-      // от nei к target
-      const result = dfs(nei, target, visited);
+      // от nei к dst
+      const result = dfs(nei, dst, visited);
 
       // Если путь найден (result != -1),
       // умножаем вес текущего ребра на result
@@ -191,6 +191,6 @@ function calcEquation(equations, values, queries) {
   //   ["x","x"] → -1 (узла x нет)
   // ]
   return queries.map(
-    ([src, target]) => dfs(src, target, new Set())
+    ([src, dst]) => dfs(src, dst, new Set())
   );
 }

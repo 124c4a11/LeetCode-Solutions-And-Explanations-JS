@@ -16,19 +16,19 @@ function calcEquation(equations, values, queries) {
     adj.get(b).push([a, 1 / values[i]]);
   }
 
-  function dfs(src, target, visited) {
+  function dfs(src, dst, visited) {
     if (
       !adj.has(src)
-      || !adj.has(target)
+      || !adj.has(dst)
     ) return -1;
-    if (src === target) return 1;
+    if (src === dst) return 1;
 
     visited.add(src);
 
     for (const [nei, weight] of adj.get(src)) {
       if (visited.has(nei)) continue;
 
-      const result = dfs(nei, target, visited);
+      const result = dfs(nei, dst, visited);
 
       if (result !== -1) {
         return weight * result;
@@ -39,6 +39,6 @@ function calcEquation(equations, values, queries) {
   };
 
   return queries.map(
-    ([src, target]) => dfs(src, target, new Set())
+    ([src, dst]) => dfs(src, dst, new Set())
   );
 }
