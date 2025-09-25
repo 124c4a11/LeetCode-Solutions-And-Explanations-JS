@@ -1,0 +1,2 @@
+LeetCode - https://leetcode.com/problems/perfect-squares/description/
+NeetCode - https://neetcode.io/problems/perfect-squares?list=neetcode250
