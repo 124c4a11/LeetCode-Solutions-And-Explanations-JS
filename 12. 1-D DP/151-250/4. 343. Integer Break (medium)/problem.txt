@@ -1,0 +1,2 @@
+LeetCode - https://leetcode.com/problems/integer-break/description/
+NeetCode - https://neetcode.io/problems/integer-break?list=neetcode250
