@@ -1,0 +1,2 @@
+LeetCode - https://leetcode.com/problems/isomorphic-strings/description/
+NeetCode - https://neetcode.io/problems/isomorphic-strings?list=neetcode250
