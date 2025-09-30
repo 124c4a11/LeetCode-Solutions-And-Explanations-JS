@@ -1,0 +1,2 @@
+LeetCode - https://leetcode.com/problems/maximum-difference-between-even-and-odd-frequency-i/description/
+NeetCode - https://neetcode.io/problems/maximum-difference-between-even-and-odd-frequency-i?list=neetcode250
