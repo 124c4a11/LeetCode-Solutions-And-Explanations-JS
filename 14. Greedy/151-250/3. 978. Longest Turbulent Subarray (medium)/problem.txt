@@ -1,0 +1,2 @@
+LeetCode - https://leetcode.com/problems/longest-turbulent-subarray/description/
+NeetCode - https://neetcode.io/problems/longest-turbulent-subarray?list=neetcode250
