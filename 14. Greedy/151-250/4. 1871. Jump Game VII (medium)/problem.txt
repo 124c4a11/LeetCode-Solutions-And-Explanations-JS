@@ -1,0 +1,2 @@
+LeetCode - https://leetcode.com/problems/jump-game-vii/description/
+NeetCode - https://neetcode.io/problems/jump-game-vii?list=neetcode250
