@@ -23,11 +23,10 @@ function canReach(s, minJump, maxJump) {
       j < Math.min(i + maxJump + 1, n);
       j++
     ) {
-      if (s[j] !== '0') continue;
+      if (s[j] === '1') continue;
+      if (j === n - 1) return true;
 
       q.enqueue(j);
-
-      if (j === n - 1) return true;
     }
 
     farthest = i + maxJump;
