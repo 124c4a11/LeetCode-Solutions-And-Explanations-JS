@@ -1,0 +1,2 @@
+LeetCode - https://leetcode.com/problems/dota2-senate/description/
+NeetCode - https://neetcode.io/problems/dota2-senate?list=neetcode250
