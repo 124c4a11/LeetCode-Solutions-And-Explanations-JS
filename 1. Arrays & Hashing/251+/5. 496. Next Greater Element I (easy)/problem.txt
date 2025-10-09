@@ -1,0 +1,2 @@
+LeetCode - https://leetcode.com/problems/next-greater-element-i/description/
+NeetCode - https://neetcode.io/problems/next-greater-element-i?list=neetcode250
