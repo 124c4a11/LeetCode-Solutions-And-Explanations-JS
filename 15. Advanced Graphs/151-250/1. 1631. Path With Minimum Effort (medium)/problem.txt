@@ -1,0 +1,2 @@
+LeetCode - https://leetcode.com/problems/path-with-minimum-effort/description/
+NeetCode - https://neetcode.io/problems/path-with-minimum-effort?list=neetcode250
