@@ -1,0 +1,2 @@
+LeetCode - https://leetcode.com/problems/build-a-matrix-with-conditions/description/
+NeetCode - https://neetcode.io/problems/build-a-matrix-with-conditions?list=neetcode250
