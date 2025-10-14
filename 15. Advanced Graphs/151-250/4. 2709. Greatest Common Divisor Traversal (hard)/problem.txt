@@ -1,0 +1,2 @@
+LeetCode - https://leetcode.com/problems/greatest-common-divisor-traversal/description/
+NeetCode - https://neetcode.io/problems/greatest-common-divisor-traversal?list=neetcode250
