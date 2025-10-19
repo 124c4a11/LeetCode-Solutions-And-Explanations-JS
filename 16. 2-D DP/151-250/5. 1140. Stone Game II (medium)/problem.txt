@@ -1,0 +1,2 @@
+LeetCode - https://leetcode.com/problems/stone-game-ii/description/
+NeetCode - https://neetcode.io/problems/stone-game-ii?list=neetcode250
