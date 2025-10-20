@@ -1,0 +1,2 @@
+LeetCode - https://leetcode.com/problems/excel-sheet-column-title/description/
+NeetCode - https://neetcode.io/problems/excel-sheet-column-title?list=neetcode250
