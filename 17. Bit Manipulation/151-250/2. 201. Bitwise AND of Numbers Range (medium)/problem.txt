@@ -1,0 +1,2 @@
+LeetCode - https://leetcode.com/problems/bitwise-and-of-numbers-range/description/
+NeetCode - https://neetcode.io/problems/bitwise-and-of-numbers-range?list=neetcode250
