@@ -1,0 +1,2 @@
+LeetCode - https://leetcode.com/problems/minimum-array-end/description/
+NeetCode - https://neetcode.io/problems/minimum-array-end?list=neetcode250
