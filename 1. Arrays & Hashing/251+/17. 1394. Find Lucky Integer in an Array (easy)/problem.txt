@@ -1,0 +1,2 @@
+LeetCode - https://leetcode.com/problems/find-lucky-integer-in-an-array/description/
+NeetCode - https://neetcode.io/problems/find-lucky-integer-in-an-array?list=neetcode250
