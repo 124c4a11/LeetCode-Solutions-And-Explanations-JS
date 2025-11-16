@@ -1,0 +1,2 @@
+LeetCode - https://leetcode.com/problems/ransom-note/description/
+NeetCode - https://neetcode.io/problems/ransom-note?list=neetcode250
