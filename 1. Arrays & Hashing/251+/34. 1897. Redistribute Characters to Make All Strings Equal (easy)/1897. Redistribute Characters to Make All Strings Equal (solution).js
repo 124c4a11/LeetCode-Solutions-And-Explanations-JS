@@ -11,9 +11,7 @@ function makeEqual(words) {
   }
 
   for (const freq of charFreq) {
-    if (freq % words.length !== 0) {
-      return false;
-    }
+    if (freq % words.length) return false;
   }
 
   return true;

@@ -107,9 +107,7 @@ function makeEqual(words) {
     // получить одинаковые слова путём
     // перераспределения букв — функция
     // возвращает false.
-    if (freq % words.length !== 0) {
-      return false;
-    }
+    if (freq % words.length) return false;
   }
 
   // Если для всех букв частоты делятся
