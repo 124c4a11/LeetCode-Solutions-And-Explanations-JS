@@ -3,17 +3,14 @@
  * @return {number}
  */
 function largestUniqueNumber(nums) {
-  const uniqueSet = new Set();
+  const numToFreq = new Map();
   for (const num of nums) {
-    if (uniqueSet.has(num)) {
-      uniqueSet.delete(num);
-    } else {
-      uniqueSet.add(num);
-    }
+    numToFreq.set(num, (numToFreq.get(num) ?? 0) + 1);
   }
 
   let largest = -1;
-  for (const num of uniqueSet) {
+  for (const [num, freq] of numToFreq) {
+    if (freq > 1) continue;
     largest = Math.max(largest, num);
   }
 
