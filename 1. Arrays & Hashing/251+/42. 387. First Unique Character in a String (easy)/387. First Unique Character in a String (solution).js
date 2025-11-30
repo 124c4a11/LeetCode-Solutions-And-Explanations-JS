@@ -7,12 +7,12 @@ function firstUniqChar(s) {
   const letters = "abcdefghijklmnopqrstuvwxyz";
 
   let result = n;
-  for (let i = 0; i < letters.length; i++) {
-    const firstNdx = s.indexOf(letters[i]);
+  for (const char of letters) {
+    const firstNdx = s.indexOf(char);
 
     if (
       firstNdx !== -1
-      && firstNdx === s.lastIndexOf(letters[i])
+      && firstNdx === s.lastIndexOf(char)
       && firstNdx < result
     ) result = firstNdx;
   }

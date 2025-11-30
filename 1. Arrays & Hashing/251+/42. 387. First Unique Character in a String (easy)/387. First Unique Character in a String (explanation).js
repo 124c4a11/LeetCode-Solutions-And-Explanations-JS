@@ -49,20 +49,19 @@ function firstUniqChar(s) {
   let result = n;
 
   // Запускаем цикл по всем буквам алфавита.
-  // i — индекс текущей буквы в строке letters.
-  for (let i = 0; i < letters.length; i++) {
+  for (const char of letters) {
 
     // Находим индекс первого вхождения
-    // текущей буквы letters[i] в строке s.
+    // текущей буквы char в строке s.
     //
     // Если буква отсутствует, indexOf вернёт -1.
-    const firstNdx = s.indexOf(letters[i]);
+    const firstNdx = s.indexOf(char);
 
     // Проверяем три условия:
     // 1. firstNdx !== -1 → буква действительно
     //    встречается в строке.
     // 
-    // 2. firstNdx === s.lastIndexOf(letters[i])
+    // 2. firstNdx === s.lastIndexOf(char)
     //    → буква встречается ровно один раз,
     //      потому что индекс первого и
     //      последнего вхождения совпадает.
@@ -79,7 +78,7 @@ function firstUniqChar(s) {
     // минимальный индекс уникального символа.
     if (
       firstNdx !== -1
-      && firstNdx === s.lastIndexOf(letters[i])
+      && firstNdx === s.lastIndexOf(char)
       && firstNdx < result
     ) result = firstNdx;
   }
