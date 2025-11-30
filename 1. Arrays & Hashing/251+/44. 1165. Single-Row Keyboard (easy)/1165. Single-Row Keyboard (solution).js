@@ -6,7 +6,7 @@
 function calculateTime(keyboard, word) {
   const charToNdx = new Int32Array(26);
   for (let i = 0; i < keyboard.length; i++) {
-    charToNdx[keyboard[i].charCodeAt(0) - 97] = i;
+    charToNdx[keyboard.charCodeAt(i) - 97] = i;
   }
 
   let result = 0;

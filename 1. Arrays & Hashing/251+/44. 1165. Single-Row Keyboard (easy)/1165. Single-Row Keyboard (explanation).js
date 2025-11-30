@@ -54,7 +54,7 @@ function calculateTime(keyboard, word) {
   for (let i = 0; i < keyboard.length; i++) {
 
     // Для символа keyboard[i] берём код символа через 
-    // charCodeAt(0) и вычитаем 97 (код 'a'), чтобы
+    // charCodeAt(i) и вычитаем 97 (код 'a'), чтобы
     // получить 0‑based индекс буквы в диапазоне 0..25
     // (Индекс 0 соответствует 'a', индекс 25 — 'z').
     //
@@ -62,7 +62,7 @@ function calculateTime(keyboard, word) {
     // записываем позицию i — таким образом строится
     // обратная карта: буква → её позиция на "линейной"
     // клавиатуре.
-    charToNdx[keyboard[i].charCodeAt(0) - 97] = i;
+    charToNdx[keyboard.charCodeAt(i) - 97] = i;
   }
 
   // Инициализируем аккумулятор result, который будет
