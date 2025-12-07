@@ -1,0 +1,2 @@
+LeetCode - https://leetcode.com/problems/group-shifted-strings/description/
+NeetCode - https://neetcode.io/problems/group-shifted-strings/question?list=neetcode250
