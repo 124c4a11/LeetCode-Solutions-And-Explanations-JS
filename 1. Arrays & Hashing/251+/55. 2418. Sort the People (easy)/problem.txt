@@ -1,2 +1,1 @@
 LeetCode - https://leetcode.com/problems/perform-string-shifts/description/
-NeetCode - https://neetcode.io/problems/perform-string-shifts/question
