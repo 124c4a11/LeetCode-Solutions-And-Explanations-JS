@@ -1,0 +1,2 @@
+LeetCode - https://leetcode.com/problems/maximum-distance-in-arrays/description/
+NeetCode - https://neetcode.io/problems/maximum-distance-in-arrays/question
