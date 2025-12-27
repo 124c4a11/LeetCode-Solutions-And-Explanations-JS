@@ -17,10 +17,10 @@ function minimumIndex(nums) {
     (x) => x === majority
   ).length;
   for (let i = 0; i < n; i++) {
-    if (nums[i] === majority) {
-      leftMajorityCnt++;
-      rightMajorityCnt--;
-    }
+    if (nums[i] !== majority) continue;
+
+    leftMajorityCnt++;
+    rightMajorityCnt--;
 
     const leftLen = i + 1;
     const rightLen = n - i - 1;
