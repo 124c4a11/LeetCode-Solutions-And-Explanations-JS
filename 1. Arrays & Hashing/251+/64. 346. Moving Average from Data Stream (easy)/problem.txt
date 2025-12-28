@@ -1,0 +1,2 @@
+LeetCode - https://leetcode.com/problems/moving-average-from-data-stream/description/
+NeetCode - https://neetcode.io/problems/moving-average-from-data-stream/question
