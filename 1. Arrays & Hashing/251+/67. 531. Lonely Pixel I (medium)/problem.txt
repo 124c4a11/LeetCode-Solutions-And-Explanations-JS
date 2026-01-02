@@ -1,0 +1,2 @@
+LeetCode - https://leetcode.com/problems/lonely-pixel-i/description/
+NeetCode - https://neetcode.io/problems/lonely-pixel-i/question
