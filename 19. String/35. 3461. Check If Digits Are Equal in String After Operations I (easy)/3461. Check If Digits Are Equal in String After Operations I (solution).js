@@ -3,7 +3,7 @@
  * @return {boolean}
  */
 function hasSameDigits(s) {
-  const nums = Array.from(s, (str) => Number(str));
+  const nums = Array.from(s, (char) => Number(char));
   for (let currLen = nums.length; currLen > 2; currLen--) {
     for (let i = 0; i < currLen - 1; i++) {
       nums[i] = (nums[i] + nums[i + 1]) % 10;

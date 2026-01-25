@@ -49,7 +49,7 @@ function hasSameDigits(s) {
   // последующих циклах.
   //
   // Результат: массив чисел той же длины, что и строка s.
-  const nums = Array.from(s, (str) => Number(str));
+  const nums = Array.from(s, (char) => Number(char));
 
   // Внешний цикл управляет текущей "длиной"
   // рассматриваемой части массива.
