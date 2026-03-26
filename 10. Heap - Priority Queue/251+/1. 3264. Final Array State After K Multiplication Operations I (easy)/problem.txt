@@ -1,0 +1,2 @@
+LeetCode - https://leetcode.com/problems/final-array-state-after-k-multiplication-operations-i/description/
+NeetCode - https://neetcode.io/problems/final-array-state-after-k-multiplication-operations-i/question
