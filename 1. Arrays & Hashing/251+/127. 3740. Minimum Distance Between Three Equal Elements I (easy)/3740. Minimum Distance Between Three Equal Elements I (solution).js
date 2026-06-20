@@ -15,12 +15,10 @@ function minimumDistance(nums) {
   }
 
   let minDistance = Infinity;
-  for (let num = 1; num < 101; num++) {
+  for (const num of nums) {
     const indices = numToSeenIndices[num];
-    if (
-      !indices
-      || indices.length < 3
-    ) continue;
+
+    if (indices.length < 3) continue;
 
     for (let i = 0; i < indices.length - 2; i++) {
       const a = indices[i];
