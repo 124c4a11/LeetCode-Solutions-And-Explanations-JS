@@ -1,0 +1,20 @@
+/**
+ * @param {number[][]} mat
+ * @return {number}
+ */
+function diagonalSum(mat) {
+  const n = mat.length;
+
+  let sum = 0;
+  for (let i = 0; i < n; i++) {
+    sum += mat[i][i] + mat[i][n - 1 - i];
+  }
+
+  if ((n & 1) === 1) {
+    const i = Math.floor(n / 2);
+
+    sum -= mat[i][i];
+  }
+
+  return sum;
+}
