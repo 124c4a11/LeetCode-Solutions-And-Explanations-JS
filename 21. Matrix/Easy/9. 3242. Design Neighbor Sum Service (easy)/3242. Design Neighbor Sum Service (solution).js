@@ -22,7 +22,7 @@ class NeighborSum {
     const directions = [[-1, 0], [1, 0], [0, -1], [0, 1]];
     const [r, c] = this.valueToPos.get(value);
 
-    let neighborsCnt = 0;
+    let neighborsSum = 0;
     for (const direction of directions) {
       const dr = direction[0];
       const dc = direction[1];
@@ -34,10 +34,10 @@ class NeighborSum {
         && nr < this.n
         && nc >= 0
         && nc < this.n
-      ) neighborsCnt += this.grid[nr][nc];
+      ) neighborsSum += this.grid[nr][nc];
     }
 
-    return neighborsCnt;
+    return neighborsSum;
   }
 
   /**
@@ -48,7 +48,7 @@ class NeighborSum {
     const directions = [[-1, -1], [-1, 1], [1, -1], [1, 1]];
     const [r, c] = this.valueToPos.get(value);
 
-    let diagonalNeighborsCnt = 0;
+    let diagonalNeighborsSum = 0;
     for (const direction of directions) {
       const dr = direction[0];
       const dc = direction[1];
@@ -60,10 +60,10 @@ class NeighborSum {
         && nr < this.n
         && nc >= 0
         && nc < this.n
-      ) diagonalNeighborsCnt += this.grid[nr][nc];
+      ) diagonalNeighborsSum += this.grid[nr][nc];
     }
 
-    return diagonalNeighborsCnt;
+    return diagonalNeighborsSum;
   }
 }
 

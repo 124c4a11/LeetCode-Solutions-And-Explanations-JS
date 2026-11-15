@@ -84,7 +84,7 @@ class NeighborSum {
     // Объявляем переменную-счетчик.
     //
     // В ней будет накапливаться итоговая сумма всех валидных соседей.
-    let neighborsCnt = 0;
+    let neighborsSum = 0;
 
     // Запускаем цикл, чтобы поочередно применить каждый из четырех
     // векторов смещения к текущей позиции [r, c].
@@ -131,11 +131,11 @@ class NeighborSum {
 
         // Если сосед существует в пределах матрицы, прибавляем его
         // значение this.grid[nr][nc] к сумме neighborsCnt.
-      ) neighborsCnt += this.grid[nr][nc];
+      ) neighborsSum += this.grid[nr][nc];
     }
 
     // Возвращаем накопленную сумму всех существующих смежных соседей.
-    return neighborsCnt;
+    return neighborsSum;
   }
 
   /**
@@ -158,7 +158,7 @@ class NeighborSum {
 
     // Инициализируем переменную-аккумулятор значением 0 для суммирования
     // значений всех диагональных соседей, не выходящих за пределы матрицы.
-    let diagonalNeighborsCnt = 0;
+    let diagonalNeighborsSum = 0;
 
     // Перебираем каждый из четырех диагональных векторов смещения из
     // массива directions.
@@ -205,12 +205,12 @@ class NeighborSum {
 
         // Если сосед существует в пределах матрицы, прибавляем его
         // значение this.grid[nr][nc] к сумме diagonalNeighborsCnt.
-      ) diagonalNeighborsCnt += this.grid[nr][nc];
+      ) diagonalNeighborsSum += this.grid[nr][nc];
     }
 
     // Возвращаем итоговую сумму всех найденных в пределах сетки
     // диагональных соседей для числа value.
-    return diagonalNeighborsCnt;
+    return diagonalNeighborsSum;
   }
 }
 
